@@ -1,4 +1,4 @@
-import 'package:alco_meter_flutter/app/enums/direction.dart';
+import 'package:alco_meter_flutter/data/enums/direction.dart';
 import 'package:alco_meter_flutter/presentation/components/texts/small_text.dart';
 import 'package:flutter/material.dart';
 

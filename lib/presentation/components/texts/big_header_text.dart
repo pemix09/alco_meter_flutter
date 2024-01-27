@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class HeaderText extends StatelessWidget {
+class BigHeaderText extends StatelessWidget {
   final String text;
 
-  const HeaderText(this.text, {super.key});
+  const BigHeaderText(this.text, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class HeaderText extends StatelessWidget {
       style: const TextStyle(
         color: Colors.white,
         decoration: TextDecoration.none,
-        fontSize: 30,
+        fontSize: 40,
       ),
     );
   }

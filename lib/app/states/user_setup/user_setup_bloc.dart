@@ -26,16 +26,16 @@ class UserSetupBloc extends Bloc<UserSetupEvent, UserSetupState> {
 
   void handleHeightEnteredEvent(double height, Emitter<UserSetupState> emit) {
     logger.d('User height entered: $height cm');
-    emit(UserHeightChangedState(userHeight: height));
+    emit(state.copyWith(height: height));
   }
 
   void handleWeightEnteredEvent(double weight, Emitter<UserSetupState> emit) {
     logger.d('User weight entered: $weight kg');
-    emit(UserWeightChangedState(userWeight: weight));
+    emit(state.copyWith(weight: weight));
   }
 
   void handleSexEnteredEvent(Sex sex, Emitter<UserSetupState> emit) {
     logger.d('User sex entered: $sex');
-    emit(UserSexChangedState(userSex: sex));
+    emit(state.copyWith(sex: sex));
   }
 }

@@ -34,7 +34,7 @@ class WeightView extends HookWidget {
     final blocBuilder = useBlocBuilder(bloc);
     
     return Platform.isIOS || Platform.isMacOS
-        ? buildAppleView(bloc.state is UserWeightChangedState == false)
+        ? buildAppleView(false)
         : buildMaterialView(bloc.state is UserWeightChangedState == false);
   }
 

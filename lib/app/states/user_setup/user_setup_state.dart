@@ -4,16 +4,20 @@ import 'package:alco_meter_flutter/data/models/user_config.dart';
 class UserSetupState {
   late final UserSetup userConfig;
 
-  UserSetupState() {
-    userConfig = UserSetup();
+  UserSetupState({double? userHeight, double? userWeight, Sex? userSex}) {
+    userConfig = UserSetup(
+      height: userHeight,
+      weight: userWeight,
+      sex: userSex,
+    );
   }
 
-  UserSetupState.copyWith({double? height, double? weight, Sex? sex}) {
-    userConfig = UserSetup();
-
-    userConfig.userHeight = height ?? userConfig.height;
-    userConfig.userWeight = weight ?? userConfig.weight;
-    userConfig.userSex = sex ?? userConfig.sex;
+  UserSetupState copyWith({double? height, double? weight, Sex? sex}) {
+    return UserSetupState(
+      userHeight: height ?? userConfig.height,
+      userWeight: weight ?? userConfig.weight,
+      userSex: sex ?? userConfig.sex,
+    );
   }
 }
 
@@ -24,21 +28,19 @@ class UserSetupInitialState extends UserSetupState {
 class UserWeightChangedState extends UserSetupState {
   final double userWeight;
 
-  UserWeightChangedState({required this.userWeight})
-      : super.copyWith(weight: userWeight);
+  UserWeightChangedState({required this.userWeight});
 }
 
 class UserHeightChangedState extends UserSetupState {
   final double userHeight;
 
-  UserHeightChangedState({required this.userHeight})
-      : super.copyWith(height: userHeight);
+  UserHeightChangedState({required this.userHeight});
 }
 
 class UserSexChangedState extends UserSetupState {
   final Sex userSex;
 
-  UserSexChangedState({required this.userSex}) : super.copyWith(sex: userSex);
+  UserSexChangedState({required this.userSex});
 }
 
 class UserSetupDoneState extends UserSetupState {

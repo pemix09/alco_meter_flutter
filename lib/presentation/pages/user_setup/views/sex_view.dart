@@ -2,7 +2,7 @@ import 'package:alco_meter_flutter/app/states/user_setup/user_setup_bloc.dart';
 import 'package:alco_meter_flutter/app/states/user_setup/user_setup_state.dart';
 import 'package:alco_meter_flutter/presentation/components/buttons/shaky_nav_button.dart';
 import 'package:alco_meter_flutter/presentation/components/texts/big_header_text.dart';
-import 'package:alco_meter_flutter/presentation/pages/drink_list/drink_list_page.dart';
+import 'package:alco_meter_flutter/presentation/pages/drink_list/views/drink_list_page.dart';
 import 'package:alco_meter_flutter/presentation/pages/user_setup/sub_views/ios/user_sex_view_ios.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +10,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooked_bloc/hooked_bloc.dart';
+import 'package:logger/logger.dart';
 import 'package:styled_widget/styled_widget.dart';
 import 'dart:io' show Platform;
 
@@ -21,10 +22,12 @@ class SexView extends HookWidget {
   final MaterialColor backgroundColor = Colors.cyan;
   late final GoRouter router;
   late final UserSetupBloc bloc;
+  late final Logger logger;
 
   SexView({super.key}) {
     router = services.get<GoRouter>();
     bloc = services.get<UserSetupBloc>();
+    logger = services.get<Logger>();
   }
 
   @override
@@ -32,11 +35,11 @@ class SexView extends HookWidget {
     final blocBuilder = useBlocBuilder(bloc);
 
     return Platform.isIOS || Platform.isMacOS
-        ? buildAppleView(bloc.state is UserSexChangedState == false)
+        ? buildAppleView(false)
         : throw UnimplementedError();
   }
 
-    Widget buildAppleView(bool nextButtonDisabled) {
+  Widget buildAppleView(bool nextButtonDisabled) {
     return CupertinoPageScaffold(
       backgroundColor: backgroundColor,
       child: Column(
@@ -55,6 +58,13 @@ class SexView extends HookWidget {
   }
 
   void handleNavButtonPress() {
-    router.push('/${DrinkListPage.routeName}');
+    try {
+      router.push(
+        '/${DrinkListPage.routeName}',
+        extra: bloc.state.userConfig.toJson(),
+      );
+    } catch (e) {
+      logger.e('Failed to navigate to drink list page, error: $e');
+    }
   }
 }

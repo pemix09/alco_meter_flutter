@@ -6,19 +6,18 @@ import 'package:go_router/go_router.dart';
 
 GoRoute createUserSetupSubRoute(
     GlobalKey<NavigatorState> parentNavigatorKey) {
-  final shellNavigatorKey = GlobalKey<NavigatorState>();
 
   return GoRoute(
     path: '/user_setup',
     parentNavigatorKey: parentNavigatorKey,
-    builder: (context, state) => WelcomeView(),
+    builder: (context, state) => const WelcomeView(),
     routes: <RouteBase>[
       GoRoute(
-        path: '${WeightView.routeName}',
+        path: WeightView.routeName,
         builder: (context, state) => WeightView(),
       ),
       GoRoute(
-        path: '${SexView.routeName}',
+        path: SexView.routeName,
         builder: (context, state) => SexView(),
       ),
     ],

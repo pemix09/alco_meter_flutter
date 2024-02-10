@@ -31,14 +31,7 @@ class DrinkListSummary extends HookWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(
-          'Alcohol level: ${promiles.toStringAsPrecision(2)}‰',
-          style: const TextStyle(
-            fontSize: 24,
-            color: Colors.white,
-            decoration: TextDecoration.none,
-          ),
-        ),
+        buildPromilesDisplay(),
         if (promiles != 0)
           Text(
             'Sober on: $dateSober',
@@ -49,9 +42,21 @@ class DrinkListSummary extends HookWidget {
             ),
           ),
       ],
-    )
-    .center()
-    .backgroundColor(Colors.deepPurple);
+    ).center().backgroundColor(Colors.deepPurple);
+  }
+
+  Widget buildPromilesDisplay() {
+    return StreamBuilder(
+      stream: bloc.promilesStream,
+      builder: (ctx, snapshot) => Text(
+        'Alcohol level: ${snapshot.data?.toStringAsPrecision(2)}‰',
+        style: const TextStyle(
+          fontSize: 24,
+          color: Colors.white,
+          decoration: TextDecoration.none,
+        ),
+      ),
+    );
   }
 
   String getSoberWhen(Duration timeToSober) {

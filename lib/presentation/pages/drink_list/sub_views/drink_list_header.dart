@@ -1,4 +1,5 @@
 import 'package:alco_meter_flutter/app/states/drink_list/drink_list_bloc.dart';
+import 'package:alco_meter_flutter/app/states/drink_list/drink_list_event.dart';
 import 'package:alco_meter_flutter/presentation/components/texts/header_text.dart';
 import 'package:alco_meter_flutter/presentation/pages/add_drink/views/add_drink_page.dart';
 import 'package:alco_meter_flutter/presentation/pages/drink_list/views/drink_list_page.dart';
@@ -76,5 +77,9 @@ class DrinkListHeader extends HookWidget {
 
   void navigateToUserSetup() {
     router.push('/user_setup/weight');
+  }
+
+  void refreshDrinkList() {
+    bloc.add(RefreshDrinksListEvent());
   }
 }

@@ -28,12 +28,12 @@ class DrinkListPage extends HookWidget {
 
     if (extra != null) {
       bloc.add(
-        LoadingDrinksListEvent(
+        RefreshDrinksListEvent(
           user: UserSetup.fromJson(extra as String),
         ),
       );
     } else {
-      LoadingDrinksListEvent();
+      RefreshDrinksListEvent();
     }
   }
 

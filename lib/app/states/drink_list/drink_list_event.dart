@@ -4,10 +4,10 @@ import 'package:alco_meter_flutter/data/models/user_config.dart';
 abstract class DrinkListEvent {
 }
 
-class LoadingDrinksListEvent extends DrinkListEvent {
+class RefreshDrinksListEvent extends DrinkListEvent {
   final UserSetup? user;
 
-  LoadingDrinksListEvent({this.user});
+  RefreshDrinksListEvent({this.user});
 }
 
 class DeleteDrinkEvent extends DrinkListEvent {

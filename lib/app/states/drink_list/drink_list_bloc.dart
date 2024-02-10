@@ -35,6 +35,9 @@ class DrinkListBloc extends Bloc<DrinkListEvent, DrinkListState> {
         var promiles = alcoCalc.calculateAlcoholLevel(state.drinks, state.user);
         logger.d('promiles: $promiles');
         _promilesController.sink.add(promiles);
+      } else {
+        logger.d('no alcohol in blood');
+        _promilesController.sink.add(0);
       }
     });
   }

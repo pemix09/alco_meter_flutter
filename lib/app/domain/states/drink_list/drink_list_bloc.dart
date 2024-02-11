@@ -58,8 +58,9 @@ class DrinkListBloc extends Bloc<DrinkListEvent, DrinkListState> {
     );
     _promilesController.sink.add(promiles);
     emit(state.copyWith(
-        drinks: await drinkService.getDrinks(),
-        user: event.user ?? state.user));
+      drinks: await drinkService.getDrinks(),
+      user: event.user ?? state.user ?? await userService.readSetupFromStorage(),
+    ));
   }
 
   void handleDeleteDrinkEvent(Drink drink, Emitter<DrinkListState> emit) async {

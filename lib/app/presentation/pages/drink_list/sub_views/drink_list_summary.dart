@@ -63,9 +63,9 @@ class DrinkListSummary extends HookWidget {
     var dateSober = DateTime.now().add(timeToSober);
 
     if (dateSober.minute < 10) {
-      return '${dateSober.hour}:0${dateSober.minute}';
+      return '${dateSober.hour}:0${dateSober.minute}, ${dateSober.day}.${dateSober.month}';
     } else {
-      return '${dateSober.hour}:${dateSober.minute}';
+      return '${dateSober.hour}:${dateSober.minute}, ${dateSober.day}.${dateSober.month}';
     }
   }
 }

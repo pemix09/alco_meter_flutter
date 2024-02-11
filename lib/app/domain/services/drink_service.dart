@@ -6,15 +6,22 @@ import 'package:logger/logger.dart';
 class DrinkService {
   late final DrinkRepository drinkRepository;
   late final Logger logger;
+  late List<Drink> drinks;
 
   DrinkService() {
     final services = GetIt.instance;
     drinkRepository = services.get<DrinkRepository>();
     logger = services.get<Logger>();
+    drinks = <Drink>[];
   }
 
   Future<List<Drink>> getDrinks() async {
-    return await drinkRepository.getDrinks();
+
+    if (drinks.isEmpty) {
+      drinks = await drinkRepository.getDrinks();
+    }
+
+    return drinks;
   }
 
   Future<void> addDrink(Drink drink) async {

@@ -7,6 +7,7 @@ import 'package:alco_meter_flutter/app/domain/services/drink_service.dart';
 import 'package:alco_meter_flutter/app/domain/services/user_service.dart';
 import 'package:alco_meter_flutter/app/domain/states/add_drink/add_drink_bloc.dart';
 import 'package:alco_meter_flutter/app/domain/states/drink_list/drink_list_bloc.dart';
+import 'package:alco_meter_flutter/app/domain/states/initial_page/initial_bloc.dart';
 import 'package:alco_meter_flutter/app/domain/states/user_setup/user_setup_bloc.dart';
 import 'package:alco_meter_flutter/app/data/enums/drink_type.dart';
 import 'package:alco_meter_flutter/app/data/enums/sex.dart';
@@ -35,6 +36,7 @@ void main() async {
   services.registerFactory<AlcoholCalculator>(() => AlcoholCalculator());
   services.registerLazySingleton<DrinkRepository>(() => DrinkRepository());
   services.registerFactory<UserRepository>(() => UserRepository());
+  services.registerLazySingleton<InitialBloc>(() => InitialBloc());
 
   await Hive.initFlutter();
   Hive.registerAdapter(UserAdapter()); 

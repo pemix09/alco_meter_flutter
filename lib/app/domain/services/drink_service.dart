@@ -25,11 +25,13 @@ class DrinkService {
   }
 
   Future<void> addDrink(Drink drink) async {
+    drinks.add(drink);
     logger.d('Drink: ${drink.amount} ml, ${drink.percentage}%, ${drink.id}');
     await drinkRepository.addDrink(drink);
   }
 
   Future<void> deleteDrink(Drink drink) async {
+    drinks.remove(drink);
     await drinkRepository.deleteDrink(drink);
   }
 }

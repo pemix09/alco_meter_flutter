@@ -1,8 +1,6 @@
-import 'dart:convert';
 
 import 'package:alco_meter_flutter/app/domain/states/drink_list/drink_list_bloc.dart';
 import 'package:alco_meter_flutter/app/domain/states/drink_list/drink_list_event.dart';
-import 'package:alco_meter_flutter/app/domain/states/drink_list/drink_list_state.dart';
 import 'package:alco_meter_flutter/app/data/models/user.dart';
 import 'package:alco_meter_flutter/app/presentation/pages/drink_list/sub_views/drink_list_element.dart';
 import 'package:alco_meter_flutter/app/presentation/pages/drink_list/sub_views/drink_list_header.dart';
@@ -10,7 +8,6 @@ import 'package:alco_meter_flutter/app/presentation/pages/drink_list/sub_views/d
 import 'package:flutter/cupertino.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hooked_bloc/hooked_bloc.dart';

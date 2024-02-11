@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:alco_meter_flutter/app/data/enums/sex.dart';
 import 'package:hive/hive.dart';
-import 'package:uuid/uuid.dart';
 
 part 'user.g.dart';
 
@@ -19,8 +18,8 @@ class User {
   @HiveField(3)
   late String id;
 
-  User({required double this.height, required double this.weight,
-  required Sex this.sex, required String this.id});
+  User({required this.height, required this.weight,
+  required this.sex, required this.id});
 
   set userHeight(double userHeight) {
     height = userHeight;

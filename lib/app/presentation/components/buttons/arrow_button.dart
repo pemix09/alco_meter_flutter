@@ -17,7 +17,7 @@ class ArrowButton extends StatelessWidget {
               const SmallText(text: 'go next'),
               IconButton(
                 onPressed: onPressed,
-                icon: Icon(Icons.arrow_forward_ios),
+                icon: const Icon(Icons.arrow_forward_ios),
                 color: Colors.white,
               ),
             ],
@@ -26,7 +26,7 @@ class ArrowButton extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: onPressed,
-                icon: Icon(Icons.arrow_back_ios),
+                icon: const Icon(Icons.arrow_back_ios),
                 color: Colors.white,
               ),
               const SmallText(text: 'go back')

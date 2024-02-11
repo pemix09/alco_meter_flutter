@@ -1,6 +1,5 @@
 import 'package:alco_meter_flutter/app/data/enums/drink_type.dart';
 import 'package:hive/hive.dart';
-import 'package:uuid/uuid.dart';
 
 part 'drink.g.dart';
 

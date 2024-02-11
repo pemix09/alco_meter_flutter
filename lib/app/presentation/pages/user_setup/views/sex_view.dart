@@ -1,6 +1,5 @@
 import 'package:alco_meter_flutter/app/domain/states/user_setup/user_setup_bloc.dart';
 import 'package:alco_meter_flutter/app/domain/states/user_setup/user_setup_event.dart';
-import 'package:alco_meter_flutter/app/domain/states/user_setup/user_setup_state.dart';
 import 'package:alco_meter_flutter/app/presentation/components/buttons/shaky_nav_button.dart';
 import 'package:alco_meter_flutter/app/presentation/components/texts/big_header_text.dart';
 import 'package:alco_meter_flutter/app/presentation/pages/drink_list/views/drink_list_page.dart';

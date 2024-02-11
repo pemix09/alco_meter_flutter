@@ -26,12 +26,14 @@ class DrinkListInitialState extends DrinkListState {
 }
 
 class DrinkListChangedState extends DrinkListState {
+  @override
   final List<Drink> drinks;
 
   DrinkListChangedState({required this.drinks}) : super();
 }
 
 class DrinkListLoadedState extends DrinkListState {
+  @override
   final List<Drink> drinks;
 
   DrinkListLoadedState({required this.drinks}) : super();

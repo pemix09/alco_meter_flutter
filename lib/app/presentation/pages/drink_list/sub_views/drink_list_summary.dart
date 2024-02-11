@@ -1,7 +1,5 @@
 import 'package:alco_meter_flutter/app/domain/services/alco_calc.dart';
 import 'package:alco_meter_flutter/app/domain/states/drink_list/drink_list_bloc.dart';
-import 'package:alco_meter_flutter/app/domain/states/user_setup/user_setup_bloc.dart';
-import 'package:alco_meter_flutter/app/data/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get_it/get_it.dart';

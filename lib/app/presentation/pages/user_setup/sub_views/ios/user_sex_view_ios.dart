@@ -14,7 +14,7 @@ class UserSexViewIos extends HookWidget {
 
   late final UserSetupBloc bloc;
 
-  UserSexViewIos() {
+  UserSexViewIos({super.key}) {
     bloc = services<UserSetupBloc>();
   }
 

@@ -1,5 +1,4 @@
 import 'package:alco_meter_flutter/app/domain/repositories/user_repo.dart';
-import 'package:alco_meter_flutter/app/data/enums/sex.dart';
 import 'package:alco_meter_flutter/app/data/models/user.dart';
 import 'package:get_it/get_it.dart';
 

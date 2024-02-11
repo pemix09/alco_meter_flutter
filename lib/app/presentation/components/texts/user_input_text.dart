@@ -4,7 +4,7 @@ class UserInputText extends StatelessWidget {
   final String userInputText;
   final Color? color;
 
-  UserInputText({
+  const UserInputText({
     super.key,
     required this.userInputText,
     this.color,

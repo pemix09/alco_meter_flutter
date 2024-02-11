@@ -23,7 +23,7 @@ class InitialBloc extends Bloc<InitEvent, InitialState> {
     var setup = await userService.readSetupFromStorage();
     await drinkService.getDrinks();
 
-    if (setup == null || setup.id == null || setup.id == '') {
+    if (setup == null || setup.id == '') {
       emit (SetupNeededState());
     } else {
       emit (SetupCompletedState());

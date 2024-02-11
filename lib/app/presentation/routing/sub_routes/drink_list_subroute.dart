@@ -1,4 +1,3 @@
-import 'package:alco_meter_flutter/app/data/models/user.dart';
 import 'package:alco_meter_flutter/app/presentation/pages/add_drink/views/add_drink_page.dart';
 import 'package:alco_meter_flutter/app/presentation/pages/drink_list/views/drink_list_page.dart';
 import 'package:flutter/widgets.dart';

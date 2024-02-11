@@ -1,19 +1,15 @@
 import 'package:alco_meter_flutter/app/domain/states/user_setup/user_setup_bloc.dart';
-import 'package:alco_meter_flutter/app/domain/states/user_setup/user_setup_state.dart';
 import 'package:alco_meter_flutter/app/presentation/components/buttons/shaky_nav_button.dart';
 import 'package:alco_meter_flutter/app/presentation/components/texts/big_header_text.dart';
-import 'package:alco_meter_flutter/app/presentation/pages/user_setup/sub_views/android/user_weight_view_android.dart';
 import 'package:alco_meter_flutter/app/presentation/pages/user_setup/sub_views/ios/user_weight_view_ios.dart';
 import 'package:alco_meter_flutter/app/presentation/pages/user_setup/views/sex_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get_it/get_it.dart';
-import 'dart:io' show Platform;
 import 'package:go_router/go_router.dart';
 import 'package:hooked_bloc/hooked_bloc.dart';
 import 'package:styled_widget/styled_widget.dart';
-import 'package:hooked_bloc/hooked_bloc.dart';
 
 var services = GetIt.instance;
 

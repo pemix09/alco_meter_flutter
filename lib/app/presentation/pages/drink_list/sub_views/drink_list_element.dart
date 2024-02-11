@@ -1,7 +1,6 @@
 import 'package:alco_meter_flutter/app/domain/states/drink_list/drink_list_bloc.dart';
 import 'package:alco_meter_flutter/app/domain/states/drink_list/drink_list_event.dart';
 import 'package:alco_meter_flutter/app/data/models/drink.dart';
-import 'package:alco_meter_flutter/app/presentation/pages/drink_list/views/drink_list_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';

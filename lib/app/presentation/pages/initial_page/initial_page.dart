@@ -4,7 +4,6 @@ import 'package:alco_meter_flutter/app/domain/states/initial_page/initial_state.
 import 'package:alco_meter_flutter/app/presentation/pages/drink_list/views/drink_list_page.dart';
 import 'package:alco_meter_flutter/app/presentation/pages/user_setup/views/weight_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
@@ -15,7 +14,7 @@ class InitialPage extends HookWidget {
   late final InitialBloc bloc;
   late final GoRouter router;
 
-  InitialPage() {
+  InitialPage({super.key}) {
     final services = GetIt.instance;
     bloc = services.get<InitialBloc>();
     router = services.get<GoRouter>();

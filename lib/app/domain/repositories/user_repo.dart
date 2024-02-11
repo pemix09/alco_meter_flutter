@@ -7,15 +7,18 @@ class UserRepository {
 
   Future<void> addUser(User user) async {
     if (user.id == '') {
-      user.id = Uuid().v4();
+      user.id = const Uuid().v4();
     }
 
     var usersBox = await Hive.openBox<User>(userBoxName);
     await usersBox.put(user.id, user);
   }
 
-  Future<User> getUser() async {
+  Future<User?> getUser() async {
     var usersBox = await Hive.openBox<User>(userBoxName);
+
+    if (usersBox.isEmpty) return null;
+
     return usersBox.values.firstWhere((user) => user.id != '');
   }
 
